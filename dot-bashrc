@@ -1,7 +1,7 @@
 # Read at start up by interactive non-login instances of Bash.
 
 # Prompts - look for IP address (1.2.3.4) in who output to detect remote shells.
-if `who | grep $USER | grep '([0-9.]*)'`
+if who | grep $USER | grep '([0-9.]*)' > /dev/null
 then
   # Remote shell.
   PS1='\u@\h:\W \$ '
@@ -9,6 +9,15 @@ else
   # Local shell.
   PS1='\W \$ '
 fi
+
+PATH=$HOME/bin:/usr/local/bin:$PATH
+
+###
+# Aliases
+#
+alias la="ls -le"
+alias ll="ls -l@hoF"
+alias ls="ls -FG"
 
 ###
 # Git Support
