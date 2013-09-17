@@ -1,0 +1,7 @@
+# If /etc/profile exists it will be read first. If $HOME/.bash_profile exists
+# it would be sourced in preference to this file, but I like symetry with
+# .bash_logout...
+
+if [ -f $HOME/.bashrc ] ; then source $HOME/.bashrc ; fi
+
+# The actions below only happen in a login shell.

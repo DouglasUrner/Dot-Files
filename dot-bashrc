@@ -1,0 +1,25 @@
+# Read at start up by interactive non-login instances of Bash.
+
+# Prompts - look for IP address (1.2.3.4) in who output to detect remote shells.
+if `who | grep $USER | grep '([0-9.]*)'`
+then
+  # Remote shell.
+  PS1='\u@\h:\W \$ '
+else
+  # Local shell.
+  PS1='\W \$ '
+fi
+
+###
+# Git Support
+#
+alias curlga='curl $@ | git apply --index'
+
+###
+# Drupal Support
+#
+
+# Drush 7 aliases and the like
+if [ -f $HOME/.drush/drush.bashrc ] ; then
+  source $HOME/.drush/drush.bashrc
+fi
