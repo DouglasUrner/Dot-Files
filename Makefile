@@ -1,7 +1,8 @@
 DOTFILES = \
 	${HOME}/.bash_login            \
 	${HOME}/.bashrc                \
-	${HOME}/.bash_logout
+	${HOME}/.bash_logout           \
+	${HOME}/.profile
 
 install: ${DOTFILES}
 
@@ -12,4 +13,7 @@ ${HOME}/.bashrc: dot-bashrc
 	cp $? $@
 
 ${HOME}/.bash_logout: dot-bash_logout
+	cp $? $@
+
+${HOME}/.profile: dot-profile
 	cp $? $@

@@ -12,12 +12,21 @@ fi
 
 PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=emacs
+export GREP_COLOR='1;33'
+export GREP_OPTIONS='-n --color=auto'
+export HISTCONTROL=erasedups
+
 ###
 # Aliases
 #
-alias la="ls -le"
-alias ll="ls -l@hoF"
-alias ls="ls -FG"
+alias df='df -h'
+alias du='du -h -d 2'
+alias grep='zegrep'
+alias la='ls -le'
+alias ll='ls -l@hoF'
+alias ls='ls -FG'
+#alias psg="ps axlww | egrep UID\|\$1"
 
 ###
 # Git Support
@@ -31,4 +40,8 @@ alias curlga='curl $@ | git apply --index'
 # Drush 7 aliases and the like
 if [ -f $HOME/.drush/drush.bashrc ] ; then
   source $HOME/.drush/drush.bashrc
+fi
+
+if [ -f $HOME/.bashrc_local ] ; then
+  source $HOME/.bashrc_local
 fi
