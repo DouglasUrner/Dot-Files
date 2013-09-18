@@ -6,10 +6,10 @@ DOTFILES = \
 
 install: ${DOTFILES}
 
-diff: ${DOTFILES}
+diff:
 	for i in ${DOTFILES} ;                                \
-		do diff `echo $$i | sed -e 's/^.*\/\./dot-/'` $$i ; \
-	done
+		do diff -c `echo $$i | sed -e 's/^.*\/\./dot-/'` $$i ; \
+	done | less
 
 ${HOME}/.bash_login: dot-bash_login
 	cp $? $@

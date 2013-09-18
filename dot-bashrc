@@ -12,6 +12,7 @@ fi
 
 PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export BLOCKSIZE=1g
 export EDITOR=emacs
 export GREP_COLOR='1;33'
 export GREP_OPTIONS='-n --color=auto'
@@ -23,10 +24,10 @@ export HISTCONTROL=erasedups
 alias df='df -h'
 alias du='du -h -d 2'
 alias grep='zegrep'
-alias la='ls -le'
+alias la='ls -aFG'
+alias le='ls -le'
 alias ll='ls -l@hoF'
 alias ls='ls -FG'
-#alias psg="ps axlww | egrep UID\|\$1"
 
 ###
 # Git Support
