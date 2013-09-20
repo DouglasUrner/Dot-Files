@@ -1,7 +1,7 @@
 # Read at start up by interactive non-login instances of Bash.
 
 # Prompts - look for IP address (1.2.3.4) in who output to detect remote shells.
-if who | grep $USER | grep '([0-9.]*)' > /dev/null
+if who | grep $USER | sed -e 's/^.*(/(/' > /dev/null
 then
   # Remote shell.
   PS1='\u@\h:\W \$ '
