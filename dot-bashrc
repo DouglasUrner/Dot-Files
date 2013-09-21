@@ -1,13 +1,12 @@
 # Read at start up by interactive non-login instances of Bash.
 
-# Prompts - look for IP address (1.2.3.4) in who output to detect remote shells.
-if who | grep $USER | sed -e 's/^.*(/(/' > /dev/null
+if [ -z $SSH_CLIENT ]
 then
-  # Remote shell.
-  PS1='\u@\h:\W \$ '
-else
   # Local shell.
   PS1='\W \$ '
+else
+  # Remote shell.
+  PS1='\u@\h:\W \$ '
 fi
 
 PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -43,6 +42,6 @@ if [ -f $HOME/.drush/drush.bashrc ] ; then
   source $HOME/.drush/drush.bashrc
 fi
 
-if [ -f $HOME/.bashrc_local ] ; then
-  source $HOME/.bashrc_local
+if [ -f $HOME/.bashrc.`hostname -s` ] ; then
+  source $HOME/.bashrc.`hostname -s`
 fi
