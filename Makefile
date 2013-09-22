@@ -4,8 +4,15 @@ DOTFILES = \
 	${HOME}/.bash_login            \
 	${HOME}/.bashrc                \
 	${HOME}/.bash_logout           \
-	${HOME}/.profile							 \
-	${HOME}/.bashrc.${HOSTNAME}
+	${HOME}/.profile
+
+LOCALRC = dot-bashrc.${HOSTNAME}
+
+ifeq ($(wildcard ${LOCALRC}),)
+	// Do nothing
+else
+	DOTFILES += ${HOME}/.bashrc.${HOSTNAME}
+endif
 
 install: ${DOTFILES}
 
