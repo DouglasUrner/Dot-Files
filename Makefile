@@ -9,7 +9,7 @@ DOTFILES = \
 LOCALRC = dot-bashrc.${HOSTNAME}
 
 ifeq ($(wildcard ${LOCALRC}),)
-	// Do nothing
+	# Do nothing if ${LOCALRC} doesn't exist.
 else
 	DOTFILES += ${HOME}/.bashrc.${HOSTNAME}
 endif
