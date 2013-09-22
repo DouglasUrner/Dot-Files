@@ -1,6 +1,6 @@
 # Read at start up by interactive non-login instances of Bash.
 
-if [ -z $SSH_CLIENT ]
+if [ -z "$SSH_CLIENT" ]
 then
   # Local shell.
   PS1='\W \$ '
