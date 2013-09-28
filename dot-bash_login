@@ -5,3 +5,8 @@
 if [ -f $HOME/.bashrc ] ; then source $HOME/.bashrc ; fi
 
 # The actions below only happen in a login shell.
+
+if [ -f $HOME/.bash/git-completion.bash ]
+then
+	source $HOME/.bash/git-completion.bash
+fi
