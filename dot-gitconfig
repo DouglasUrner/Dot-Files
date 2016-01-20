@@ -1,0 +1,15 @@
+[user]
+	name = Douglas Urner
+	email = dlu@canishe.com
+[push]
+	default = upstream
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color]
+	ui = true
