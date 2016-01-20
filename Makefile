@@ -40,3 +40,8 @@ ${HOME}/.bash/git-completion.bash: dot-bash/git-completion.bash
 
 ${HOME}/.profile: dot-profile
 	cp $? $@
+
+.PHONY: ${HOME}/.bash
+	-if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
+
+-include ${HOME}/.bash
