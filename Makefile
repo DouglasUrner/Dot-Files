@@ -48,3 +48,8 @@ ${HOME}/.gitconfig: dot-gitconfig
 
 ${HOME}/.gitignore: dot-gitignore
 	cp $? $@
+
+.PHONY: ${HOME}/.bash
+	-if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
+
+-include ${HOME}/.bash
