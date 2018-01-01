@@ -1,5 +1,5 @@
 # If /etc/profile exists it will be read first. If $HOME/.bash_profile exists
-# it would be sourced in preference to this file, but I like symetry with
+# it would be sourced in preference to this file, but I like symmetry with
 # .bash_logout...
 
 if [ -f $HOME/.bashrc ] ; then source $HOME/.bashrc ; fi

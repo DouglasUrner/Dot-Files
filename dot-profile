@@ -1,7 +1,7 @@
-# Configuration for Bourne Shell deriviative login shells (e.g., bash, zsh).
+# Configuration for Bourne Shell derivative login shells (e.g., bash, zsh).
 #
 # Won't be read if a shell specific file also exists (e.g. .bash_profile). This
-# file could be used to hold configuration that is not shell dependant and then
+# file could be used to hold configuration that is not shell dependent and then
 # source the shell specific commands based on the shell being run.
 
 # Run shell specific commands
