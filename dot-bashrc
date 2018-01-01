@@ -11,6 +11,9 @@ fi
 
 PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# RVM
+if [ -f $HOME/.rvm/scripts/rvm ] ; then source $HOME/.rvm/scripts/rvm ; fi
+
 export BLOCKSIZE=1g
 export EDITOR=emacs
 export GREP_COLOR='1;33'
