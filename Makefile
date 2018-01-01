@@ -5,7 +5,9 @@ DOTFILES =                           \
 	${HOME}/.bashrc                    \
 	${HOME}/.bash_logout               \
 	${HOME}/.bash/git-completion.bash  \
-	${HOME}/.profile
+	${HOME}/.profile                   \
+	${HOME}/.gitconfig                 \
+	${HOME}/.gitignore
 
 LOCALRC = dot-bashrc.${HOSTNAME}
 
@@ -16,7 +18,7 @@ else
 endif
 
 install: ${DOTFILES}
-	-if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
+	@if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
 
 diff:
 	for i in ${DOTFILES} ;                                \
@@ -39,4 +41,10 @@ ${HOME}/.bash/git-completion.bash: dot-bash/git-completion.bash
 	cp $? $@
 
 ${HOME}/.profile: dot-profile
+	cp $? $@
+
+${HOME}/.gitconfig: dot-gitconfig
+	cp $? $@
+
+${HOME}/.gitignore: dot-gitignore
 	cp $? $@
