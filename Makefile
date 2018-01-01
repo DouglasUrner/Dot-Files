@@ -38,6 +38,7 @@ ${HOME}/.bash_logout: dot-bash_logout
 	cp $? $@
 
 ${HOME}/.bash/git-completion.bash: dot-bash/git-completion.bash
+	mkdir -p ${HOME}/.bash
 	cp $? $@
 
 ${HOME}/.profile: dot-profile
@@ -48,8 +49,3 @@ ${HOME}/.gitconfig: dot-gitconfig
 
 ${HOME}/.gitignore: dot-gitignore
 	cp $? $@
-
-.PHONY: ${HOME}/.bash
-	-if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
-
--include ${HOME}/.bash
