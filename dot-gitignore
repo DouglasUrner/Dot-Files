@@ -1,5 +1,13 @@
+# Global Git ignores be very cautious about what you add.
+
 *.o
 .depend
+
+# JetBrains IDEs
 .idea
+
+# OS X
 .DS_Store
+
+# vim and friends
 *.swp
