@@ -18,7 +18,6 @@ else
 endif
 
 install: ${DOTFILES}
-	@if [ ! -d ${HOME}/.bash ] ; then mkdir ${HOME}/.bash ; fi
 
 diff:
 	for i in ${DOTFILES} ;                                \
