@@ -2,21 +2,47 @@
 	name = Douglas Urner
 	email = dlu@canishe.com
 
+[github]
+	user = dlu@canishe.com
+
+[color]
+	ui = true
+
 [core]
 	excludesfile = ~/.gitignore
+	editor = emacs
+	autocrlf = input
 
 [credential]
 	helper = osxkeychain
+
+[alias]
+  wdiff = diff --word-diff=color --unified=1
 
 [diff]
 	# Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
 	# instead of a/b/c/d as prefixes for patches
 	mnemonicprefix = true
 
-[push]
-	# Push the current branch back to the matching branch on the
-	# central repository.
-	default = simple
+[diff "pandoc"]
+  textconv=pandoc --to=markdown
+  prompt = false
 
-[color]
-	ui = true
+[push]
+	default = upstream
+
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
